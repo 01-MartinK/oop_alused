@@ -1,19 +1,17 @@
+/*
+Muutujatega töötamine
+ülesanne 1.2
+ */
+
 public class test {
     public static void main(String[] args) {
-        /*
-        Kommenteerimine
-        Väljastamine
-        Katsetamine
-         */
-        int rows = 5;
+        // defitsineerimine
+        int aasta = 2020;
+        String liblikas = "teelehe-mosaiikliblikas";
+        String lauseKeskosa = ". aasta liblikas on ";
+        String lause = aasta + lauseKeskosa + liblikas;
+        // kontrollimine
 
-        for (int i = 1; i <= rows; ++i) {
-            for (int j = 1; j <= i; ++j) {
-                System.out.print(j + " ");
-                //System.out.println(j+"Kurjam");
-            }
-            System.out.println();
-        }
-
+        System.out.println(lause);
     }
 }
