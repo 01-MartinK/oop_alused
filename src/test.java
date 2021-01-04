@@ -1,17 +1,22 @@
 /*
-Muutujatega töötamine
-ülesanne 1.2
+Asdentamine
+ülesanne 1.3
  */
+
+import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-        // defitsineerimine
-        int aasta = 2020;
-        String liblikas = "teelehe-mosaiikliblikas";
-        String lauseKeskosa = ". aasta liblikas on ";
-        String lause = aasta + lauseKeskosa + liblikas;
-        // kontrollimine
+        Scanner sisend = new Scanner(System.in);
+        // Selgitame mida tuleb teha
+        System.out.println("Sisestage astmealus!");
+        // Küsime et sisestaks astme_aluse
+        int astme_alus = sisend.nextInt();
+        // Küsime et sisestaks asdendaja
+        System.out.println("Sisestage asdendaja");
+        int asdendaja = sisend.nextInt();
 
-        System.out.println(lause);
+        int tulemus = (int) Math.pow(astme_alus, asdendaja);
+        System.out.println("Tulemus on " + tulemus);
     }
 }
