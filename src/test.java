@@ -1,6 +1,6 @@
 /*
-Nädala ajakulu
-ülesanne 1.4a
+Spämm
+ülesanne 2.3d
  */
 
 import java.util.Scanner;
@@ -10,12 +10,17 @@ public class test {
         // Scanner
         Scanner sisend = new Scanner(System.in);
         // Kasutaja poolt sisend
-        System.out.println("Sisestage ainepunktide arv: ");
-        float ainePunktid = sisend.nextInt();
-        System.out.println("Sisestage nädalate arv: ");
-        float nädalateArv = sisend.nextInt();
-        // Kontroll
-        float ajakulu = (ainePunktid * 26 / nädalateArv);
-        System.out.print(Math.round(ajakulu));
+        System.out.println("Sisestage kirjasuurus: ");
+        float kirjaSuurus = sisend.nextFloat();
+        System.out.println("Sisestage kirja sisu: ");
+        String kirjaTeema = sisend.next();
+        System.out.println("Kas kirjal on fail: ");
+        Boolean kirjalFail = sisend.nextBoolean();
+        // kontroll
+        if (kirjaTeema == "" || kirjaSuurus > 1 && kirjalFail) {
+            System.out.println("Kiri on spämm.");
+        } else {
+            System.out.println("Kiri ei ole spämm.");
+        }
     }
 }
