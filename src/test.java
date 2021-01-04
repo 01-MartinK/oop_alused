@@ -1,26 +1,21 @@
 /*
-Kandideerimine
-ülesanne 2.2
+Nädala ajakulu
+ülesanne 1.4a
  */
 
 import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
+        // Scanner
         Scanner sisend = new Scanner(System.in);
-
-        System.out.println("Palun sisestage punktide summa: ");
         // Kasutaja poolt sisend
-        double punktid = sisend.nextDouble();
+        System.out.println("Sisestage ainepunktide arv: ");
+        float ainePunktid = sisend.nextInt();
+        System.out.println("Sisestage nädalate arv: ");
+        float nädalateArv = sisend.nextInt();
         // Kontroll
-        if (punktid >= 0 && punktid < 66) {
-            System.out.println("Vähem kui kandeerimiseks vajalik.");
-        } else if (punktid >= 66 && punktid < 85) {
-            System.out.println("Kandideerimine vastuvõtule.");
-        } else if (punktid >= 85 && punktid <= 100) {
-            System.out.println("Vastuvõtt tagatud.");
-        } else if (punktid < 0 || punktid > 100) {
-            System.out.println("Vigane Tulemus.");
-        }
+        float ajakulu = (ainePunktid * 26 / nädalateArv);
+        System.out.print(Math.round(ajakulu));
     }
 }
