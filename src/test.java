@@ -1,6 +1,6 @@
 /*
-Asdentamine
-ülesanne 1.3
+If and else Pilvede ülesanne
+ülesanne 2.1
  */
 
 import java.util.Scanner;
@@ -8,15 +8,12 @@ import java.util.Scanner;
 public class test {
     public static void main(String[] args) {
         Scanner sisend = new Scanner(System.in);
-        // Selgitame mida tuleb teha
-        System.out.println("Sisestage astmealus!");
-        // Küsime et sisestaks astme_aluse
-        int astme_alus = sisend.nextInt();
-        // Küsime et sisestaks asdendaja
-        System.out.println("Sisestage asdendaja");
-        int asdendaja = sisend.nextInt();
-
-        int tulemus = (int) Math.pow(astme_alus, asdendaja);
-        System.out.println("Tulemus on " + tulemus);
+        System.out.println("Palun sisestage pilvede kõrgus: ");
+        double pilvedeKõrgus = sisend.nextDouble();
+        if (pilvedeKõrgus > 6.0) {
+            System.out.println("Need on ülemised pilved.");
+        } else {
+            System.out.println("Need ei ole ülemised pilved.");
+        }
     }
 }
