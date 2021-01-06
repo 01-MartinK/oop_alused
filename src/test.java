@@ -1,6 +1,6 @@
 /*
-Jänesevanemate mure 1
-ülesanne 3.2
+Male
+ülesanne 3.4c
  */
 
 import java.util.Scanner;
@@ -10,24 +10,23 @@ public class test {
         // Scanner
         Scanner sisend = new Scanner(System.in);
         // Kasutaja poolt sisend
-        System.out.println("Sisestage ringidearv: ");
-        int ringideArv = sisend.nextInt();
-        int porganditeArv = 0;
-        int porganditeAndmine = 0;
+        System.out.println("Sisestage täisarv: ");
+        int täisarv = sisend.nextInt() - 1;
+        int koguNisu = 1;
+        int mituNisuAnda = 2;
+        int kord = 0;
+        int ruutu = 64;
 
-        int i = 0;
-        if (porganditeArv % 2 != 0) {
-            porganditeArv -= 1;
-        }
-
-        while (i < ringideArv) {
-            i++;
-            if (i != porganditeAndmine) {
-                porganditeAndmine += 2;
+        while (kord < täisarv) {
+            if (kord != 0) {
+                koguNisu = koguNisu * 2;
+                mituNisuAnda += 2;
             } else {
-                porganditeArv += porganditeAndmine;
+                koguNisu += 1;
             }
+            kord++;
         }
-        System.out.println(porganditeArv);
+
+        System.out.println("Nisuteri:" + (täisarv + 1) + ". ruudu eest:" + koguNisu);
     }
 }
