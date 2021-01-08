@@ -1,15 +1,16 @@
 /*
-Peo eelarve
-ülesanne 6.3
+Tervitused Mõtisklusega
+ülesanne 6.4a
  */
 
 import java.util.Scanner;
 
 public class test {
     // Bänner meetod
-    static int eelarve(int külalisteArv) {
-        int makse = (int) Math.round(külalisteArv * 10 + 55);
-        return makse;
+    static void tervitus(int kord) {
+        System.out.println("Võõrustaja: 'tere!'");
+        System.out.println("Täna " + kord + ". kord tervitada, mõtiskleb võõrustaja.");
+        System.out.println("Külaline: 'Tere, suur tänu kutse eest!'");
     }
 
     // main meetod
@@ -18,13 +19,13 @@ public class test {
         Scanner sisend = new Scanner(System.in);
 
         // sisendi muutujad
-        System.out.println("Mitu inimest on kutsutud: ");
-        int inimesteArv = sisend.nextInt();
-        // tulijad
-        System.out.println("Mitu inimest tuleb: ");
-        int tulijateArv = sisend.nextInt();
+        System.out.println("Sisestage külaliste arv: ");
+        int külalisteArv = sisend.nextInt();
 
-        System.out.println("Maksimaalne summa: " + eelarve(inimesteArv) + " eurot");
-        System.out.println("Minimaalnse summa: " + eelarve(tulijateArv) + " eurot");
+        int kord = 1;
+        while (kord <= külalisteArv) {
+            tervitus(kord);
+            kord++;
+        }
     }
 }
