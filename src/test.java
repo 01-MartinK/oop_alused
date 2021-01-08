@@ -1,15 +1,15 @@
 /*
-õunamahla tekemine
-ülesanne 6.2
+Peo eelarve
+ülesanne 6.3
  */
 
 import java.util.Scanner;
 
 public class test {
     // Bänner meetod
-    static int mahlapack(double õuntekogus) {
-        int pakkideArv = (int) Math.round(õuntekogus * 0.4 / 3);
-        return pakkideArv;
+    static int eelarve(int külalisteArv) {
+        int makse = (int) Math.round(külalisteArv * 10 + 55);
+        return makse;
     }
 
     // main meetod
@@ -18,9 +18,13 @@ public class test {
         Scanner sisend = new Scanner(System.in);
 
         // sisendi muutujad
-        System.out.println("Sisestage õuntekogus: ");
-        double õunteArv = sisend.nextDouble();
+        System.out.println("Mitu inimest on kutsutud: ");
+        int inimesteArv = sisend.nextInt();
+        // tulijad
+        System.out.println("Mitu inimest tuleb: ");
+        int tulijateArv = sisend.nextInt();
 
-        System.out.println(mahlapack(õunteArv));
+        System.out.println("Maksimaalne summa: " + eelarve(inimesteArv) + " eurot");
+        System.out.println("Minimaalnse summa: " + eelarve(tulijateArv) + " eurot");
     }
 }
