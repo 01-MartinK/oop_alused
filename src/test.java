@@ -1,32 +1,33 @@
 /*
-Male
-ülesanne 3.4c
+Bänner
+ülesanne 6.1
  */
 
 import java.util.Scanner;
 
 public class test {
+    // Bänner meetod
+    static String bänner(String reklaamlause) {
+        String reklaamLauseSuurteTähtedega = reklaamlause.toUpperCase();
+        return reklaamLauseSuurteTähtedega;
+    }
+
+    // main meetod
     public static void main(String[] args) {
         // Scanner
         Scanner sisend = new Scanner(System.in);
-        // Kasutaja poolt sisend
-        System.out.println("Sisestage täisarv: ");
-        int täisarv = sisend.nextInt() - 1;
-        int koguNisu = 1;
-        int mituNisuAnda = 2;
-        int kord = 0;
-        int ruutu = 64;
 
-        while (kord < täisarv) {
-            if (kord != 0) {
-                koguNisu = koguNisu * 2;
-                mituNisuAnda += 2;
-            } else {
-                koguNisu += 1;
-            }
+        // sisendi muutujad
+        System.out.println("Sisestage mitu korda tahate näitata reklaami: ");
+        int suurus = sisend.nextInt();
+        sisend = new Scanner(System.in);
+        System.out.println("Sisestage reklaamlause: ");
+        String lause = sisend.nextLine();
+
+        int kord = 1;
+        while (kord <= suurus) {
+            System.out.println(bänner(lause));
             kord++;
         }
-
-        System.out.println("Nisuteri:" + (täisarv + 1) + ". ruudu eest:" + koguNisu);
     }
 }
