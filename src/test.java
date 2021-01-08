@@ -1,15 +1,15 @@
 /*
-Bänner
-ülesanne 6.1
+õunamahla tekemine
+ülesanne 6.2
  */
 
 import java.util.Scanner;
 
 public class test {
     // Bänner meetod
-    static String bänner(String reklaamlause) {
-        String reklaamLauseSuurteTähtedega = reklaamlause.toUpperCase();
-        return reklaamLauseSuurteTähtedega;
+    static int mahlapack(double õuntekogus) {
+        int pakkideArv = (int) Math.round(õuntekogus * 0.4 / 3);
+        return pakkideArv;
     }
 
     // main meetod
@@ -18,16 +18,9 @@ public class test {
         Scanner sisend = new Scanner(System.in);
 
         // sisendi muutujad
-        System.out.println("Sisestage mitu korda tahate näitata reklaami: ");
-        int suurus = sisend.nextInt();
-        sisend = new Scanner(System.in);
-        System.out.println("Sisestage reklaamlause: ");
-        String lause = sisend.nextLine();
+        System.out.println("Sisestage õuntekogus: ");
+        double õunteArv = sisend.nextDouble();
 
-        int kord = 1;
-        while (kord <= suurus) {
-            System.out.println(bänner(lause));
-            kord++;
-        }
+        System.out.println(mahlapack(õunteArv));
     }
 }
