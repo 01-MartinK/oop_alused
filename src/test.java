@@ -4,28 +4,16 @@ Tervitused Mõtisklusega
  */
 
 import java.util.Scanner;
-
 public class test {
-    // Bänner meetod
-    static void tervitus(int kord) {
-        System.out.println("Võõrustaja: 'tere!'");
-        System.out.println("Täna " + kord + ". kord tervitada, mõtiskleb võõrustaja.");
-        System.out.println("Külaline: 'Tere, suur tänu kutse eest!'");
-    }
-
-    // main meetod
     public static void main(String[] args) {
-        // Scanner
         Scanner sisend = new Scanner(System.in);
 
-        // sisendi muutujad
-        System.out.println("Sisestage külaliste arv: ");
-        int külalisteArv = sisend.nextInt();
+        int[] vastuvõetud = {2803, 2626, 2359, 1927, 2236, 2281, 2394, 2484, 2468};
 
-        int kord = 1;
-        while (kord <= külalisteArv) {
-            tervitus(kord);
-            kord++;
-        }
+        System.out.println("Sisesta aasta: ");
+        int aasta = sisend.nextInt();
+
+        int massiiviIndeks = aasta - 2011;
+        System.out.println("Vastuvõetud on " + vastuvõetud[massiiviIndeks]);
     }
 }
