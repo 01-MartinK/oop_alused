@@ -3,17 +3,24 @@ Tervitused Mõtisklusega
 ülesanne 6.4a
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+
 public class test {
     public static void main(String[] args) {
-        Scanner sisend = new Scanner(System.in);
-
-        int[] vastuvõetud = {2803, 2626, 2359, 1927, 2236, 2281, 2394, 2484, 2468};
-
-        System.out.println("Sisesta aasta: ");
-        int aasta = sisend.nextInt();
-
-        int massiiviIndeks = aasta - 2011;
-        System.out.println("Vastuvõetud on " + vastuvõetud[massiiviIndeks]);
+        File fail = new File("vastuvoetud.txt");
+        Scanner sisendFailist = new Scanner(System.in);
+        try {
+            System.out.println("Katsetame failist lugemine");
+            while (sisendFailist.hasNextLine()) {
+                String sisu = sisendFailist.nextLine();
+                System.out.println(sisu);
+            }
+            sisendFailist.close();
+        } catch (Exception e) {
+            System.out.println("Faili Pole");
+            e.printStackTrace();
+        }
     }
 }
