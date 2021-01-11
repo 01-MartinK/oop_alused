@@ -9,8 +9,8 @@ public class test {
         ArrayList<Double> tehingud = new ArrayList<Double>();
 
         try {
-            File myObj = new File("src/konto.txt");
-            Scanner sisendFail = new Scanner(myObj);
+            File file = new File("src/konto.txt");
+            Scanner sisendFail = new Scanner(file);
             while (sisendFail.hasNextLine()) {
                 String rida = sisendFail.nextLine();
                 tehingud.add(Double.parseDouble(rida));
