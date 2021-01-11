@@ -9,18 +9,13 @@ import java.util.Scanner;
 
 public class test {
     public static void main(String[] args) {
-        File fail = new File("vastuvoetud.txt");
-        Scanner sisendFailist = new Scanner(System.in);
-        try {
-            System.out.println("Katsetame failist lugemine");
-            while (sisendFailist.hasNextLine()) {
-                String sisu = sisendFailist.nextLine();
-                System.out.println(sisu);
-            }
-            sisendFailist.close();
-        } catch (Exception e) {
-            System.out.println("Faili Pole");
-            e.printStackTrace();
+        Scanner sisend = new Scanner(System.in);
+
+        System.out.println("Sisestage väärtus: ");
+        int a = sisend.nextInt();
+
+        for (int i = 0; i < a; i++) {
+            System.out.println("Kurjam");
         }
     }
 }
