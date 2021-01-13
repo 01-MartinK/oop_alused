@@ -1,7 +1,7 @@
 /*
 
-Ülesanne 5.4c
-Tahvli juurde
+Ülesanne 6.4b
+Mündid
 
  */
 
@@ -13,6 +13,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class test {
+
+    public static int pronksiarvu_summa(ArrayList<Integer> a) {
+        int b = 0;
+        for (int i = 0; i < a.size(); i++) {
+            if (a.get(i) < 10) {
+                b = b + a.get(i);
+            }
+        }
+        return b;
+    }
+
     public static void main(String[] args) {
 
         Scanner sisend = new Scanner(System.in);
@@ -20,14 +31,14 @@ public class test {
         System.out.println("Sisestage faili nimi koos laiendiga: ");
         String faili_nimi = sisend.nextLine();
 
-        ArrayList<String> failiSisu = new ArrayList<String>();
+        ArrayList<Integer> failiSisu = new ArrayList<Integer>();
 
         try {
             File file = new File("src/" + faili_nimi);
             Scanner sisendFail = new Scanner(file);
             while (sisendFail.hasNextLine()) {
                 String rida = sisendFail.nextLine();
-                failiSisu.add(rida);
+                failiSisu.add(Integer.parseInt(rida));
             }
             sisendFail.close();
         } catch (FileNotFoundException e) {
@@ -35,16 +46,7 @@ public class test {
             e.printStackTrace();
         }
 
-        LocalDateTime tänanekuupäev = LocalDateTime.now();
-        System.out.println(tänanekuupäev);
-        DateTimeFormatter tänasekuupäevaVormistus = DateTimeFormatter.ofPattern("dd");
-        String vormistatudKuupäev = tänanekuupäev.format(tänasekuupäevaVormistus);
-        System.out.println(vormistatudKuupäev);
-        /*
-        for (int i = 0;i < failiSisu.size();i++){
-            System.out.println(i+". "+failiSisu.get(i));
-        }
-         */
-        System.out.println("Tänane õpilane kes tuleb tahvlile on " + failiSisu.get(Integer.parseInt(vormistatudKuupäev)));
+        System.out.println("Hoiupõrsasse läheb " + pronksiarvu_summa(failiSisu) + " senti.");
+
     }
 }
