@@ -26,13 +26,21 @@ public class panga_haldur {
     public static Scanner sisend = new Scanner(System.in);
 
     public static void main(String[] args) {
+        kontor();
+    }
 
+    public static void kontor() {
+        System.out.println("");
+
+        // Näidis kontod
         kontod.put("felix", 5282);
         kontod.put("markus", 9312);
 
+        // küsib mida tahate teha
         System.out.println("Sisestage Tegevus mida soovite teha: konto loomine(lk) raha andmine(ar) raha võtmine(vr) raha ülekandmine(rt)");
         String tegevus = sisend.nextLine();
 
+        // ifid kontrollimas mis tegevust teete
         if (tegevus.equals("lk")) {
             pangaKontoloomine();
         } else if (tegevus.equals("ar")) {
@@ -60,6 +68,7 @@ public class panga_haldur {
         } else {
             System.out.println("Kontole ei saa negatiivset summat anda");
         }
+        kontor();
     }
 
     public static void rahaAndmine() {
@@ -77,6 +86,7 @@ public class panga_haldur {
             System.out.println("Kontole ei saa negatiivset summat anda");
         }
         System.out.println("Konto " + nimi + " praegune kogu raha summa on " + kontod.get(nimi));
+        kontor();
     }
 
     public static void rahaVotmine() {
@@ -94,6 +104,7 @@ public class panga_haldur {
             System.out.println("Kontol ei ole niipalju raha või ei saa negatiivset summat võtta");
         }
         System.out.println("Konto " + nimi + " praegune kogu raha summa on " + kontod.get(nimi));
+        kontor();
     }
 
     public static void ulekanne() {
