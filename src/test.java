@@ -21,52 +21,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class test {
+class test {
+    // Kui paned final statici asemel siis ei saa x kuidagi muuta. Panin static kuna seda saab siis muuda main meetodis.
+    static int x = 5;
 
-    public static void main(String[] args) {
-
-        Scanner sisend = new Scanner(System.in);
-
-        /*
-        System.out.println("Sisestage faili nimi koos laiendiga: ");
-        String faili_nimi = sisend.nextLine();
-
-        ArrayList<Integer> failiSisu = new ArrayList<Integer>();
-
-        try {
-            File file = new File("src/" + faili_nimi);
-            Scanner sisendFail = new Scanner(file);
-            while (sisendFail.hasNextLine()) {
-                String rida = sisendFail.nextLine();
-                failiSisu.add(Integer.parseInt(rida));
-            }
-            sisendFail.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-         */
-
-        System.out.println("Sisestage nimi: ");
-        String nimi = sisend.nextLine();
-        nimi = nimi.toLowerCase();
-
-        HashMap<String, String> grupp = new HashMap<String, String>();
-
-        grupp.put("matti", "mage");
-        grupp.put("mikael", "mixu");
-        grupp.put("arto", "arppa");
-
-        System.out.println("Kasutaja: " + nimi + ", hüüdnimega " + grupp.get(nimi) + ".");
-
-        /*
-        for (String i : grupp.keySet()){
-            System.out.println("kasutaja: " + i + ", hüüdnimega " + grupp.get(i) + ".");
-            }
-        }
-
-         */
-
+    public static void main() {
+        test myObj1 = new test();
+        test myObj2 = new test();
+        myObj2.x += myObj1.x;
+        x += 7;
+        x += myObj2.x;
+        System.out.println(myObj1.x);
+        System.out.println(myObj2.x);
     }
 }

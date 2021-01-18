@@ -97,7 +97,7 @@ public class panga_haldur {
         int raha_summa = sisend.nextInt();
 
         // kontole raha väljavõtmine nime järgi kindlat summat pidi ja mitte võtta liiga palju raha ega negatiivset
-        if (raha_summa < kontod.get(nimi) && raha_summa > 0) {
+        if (raha_summa <= kontod.get(nimi) && raha_summa > 0) {
             kontod.put(nimi, kontod.get(nimi) - raha_summa);
         } else {
             // Kui pantakse negatiive summa või kui kontol pole niipalju raha
@@ -109,7 +109,19 @@ public class panga_haldur {
 
     public static void ulekanne() {
 
-
+        System.out.println("Sisestage kes kannab raha üle: ");
+        String ulekandeTegija = sisend.nextLine();
+        System.out.println("Sisestage kes saab raha: ");
+        String ulekandeSaaja = sisend.nextLine();
+        System.out.println("Sisestage ülekande summa: ");
+        int summa = sisend.nextInt();
+        if (summa <= kontod.get(ulekandeTegija) && summa > 0) {
+            kontod.put(ulekandeTegija, kontod.get(ulekandeTegija) - summa);
+            kontod.put(ulekandeSaaja, kontod.get(ulekandeSaaja) + summa);
+        } else {
+            System.out.println("Ülekandjal pole piisavalt raha: ");
+        }
+        kontor();
     }
 
 
