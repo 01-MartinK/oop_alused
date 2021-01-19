@@ -22,19 +22,27 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 class test {
-    // Kui paned final statici asemel siis ei saa x kuidagi muuta. Panin static kuna seda saab siis muuda main meetodis.
-    static int x = 5;
-
     public static void main(String[] args) {
-        test myObj1 = new test();
-        test myObj2 = new test();
-        myObj2.x += myObj1.x;
-        x += 7;
-        x += myObj2.x;
-        System.out.println(myObj1.x);
-        System.out.println(myObj2.x);
-        reader failiSisu = new reader();
-        //ArrayList text = failiSisu.read("konto.txt");
-        System.out.println(failiSisu.read("edm.txt"));
+        // Loo Konto tüüpi objekt nimega
+        konto mkKontoSEB = new konto();
+        konto mkKontoSWED = new konto();
+        // lisame konkreetsed väärtused
+        mkKontoSEB.looKonto("Tere SEB", 20.0);
+        mkKontoSWED.looKonto("Tere SWED", 0.0);
+
+        mkKontoSEB.lisaRahaSelgitus(mkKontoSEB.lisaRaha(20.0));
+        mkKontoSWED.lisaRahaSelgitus(mkKontoSWED.lisaRaha(-50.0));
+        // väljastame tulemuse
+        System.out.println("SEB");
+        System.out.println("Konto omanik: " + mkKontoSEB.omanik);
+        System.out.println("Konto bilans: " + mkKontoSEB.bilans);
+        mkKontoSEB.võtaRaha(10.0);
+        System.out.println("Konto bilans: " + mkKontoSEB.bilans);
+        mkKontoSEB.teeUlekanne(mkKontoSWED, 10.0);
+        System.out.println("Konto bilans: " + mkKontoSEB.bilans);
+        System.out.println("");
+        System.out.println("SWD");
+        System.out.println("Konto omanik: " + mkKontoSWED.omanik);
+        System.out.println("Konto bilans: " + mkKontoSWED.bilans);
     }
 }

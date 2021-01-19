@@ -26,15 +26,16 @@ public class panga_haldur {
     public static Scanner sisend = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Näidis kontod
+        kontod.put("felix", 5282);
+        kontod.put("markus", 9312);
         kontor();
     }
 
     public static void kontor() {
         System.out.println("");
-
-        // Näidis kontod
-        kontod.put("felix", 5282);
-        kontod.put("markus", 9312);
+        System.out.println(kontod);
+        System.out.println("");
 
         // küsib mida tahate teha
         System.out.println("Sisestage Tegevus mida soovite teha: konto loomine(lk) raha andmine(ar) raha võtmine(vr) raha ülekandmine(rt)");
