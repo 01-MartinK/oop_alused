@@ -25,7 +25,7 @@ class test {
     // Kui paned final statici asemel siis ei saa x kuidagi muuta. Panin static kuna seda saab siis muuda main meetodis.
     static int x = 5;
 
-    public static void main() {
+    public static void main(String[] args) {
         test myObj1 = new test();
         test myObj2 = new test();
         myObj2.x += myObj1.x;
@@ -33,5 +33,8 @@ class test {
         x += myObj2.x;
         System.out.println(myObj1.x);
         System.out.println(myObj2.x);
+        reader failiSisu = new reader();
+        //ArrayList text = failiSisu.read("konto.txt");
+        System.out.println(failiSisu.read("edm.txt"));
     }
 }
