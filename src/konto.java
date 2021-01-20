@@ -4,7 +4,7 @@ public class konto {
     public Double bilans;
 
     // Konstruktor
-    // See genereerumis käsk on jummala hea.
+    // See genereerumis käsk on jummala hea. Kuid sellel on oma probleemid
     public konto(String omanik) {
         this.omanik = omanik;
     }
