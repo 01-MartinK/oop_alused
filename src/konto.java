@@ -2,8 +2,18 @@ public class konto {
     // muutujad
     public String omanik;
     public Double bilans;
-    // meetodid
 
+    // Konstruktor
+    // See genereerumis käsk on jummala hea.
+    public konto(String omanik) {
+        this.omanik = omanik;
+    }
+
+    public konto(String omanikuNimi, Double summa) {
+        this.looKonto(omanikuNimi, summa);
+    }
+
+    // meetodi
     public void looKonto(String omanikuNimi, Double summa) {
         this.omanik = omanikuNimi;
         this.bilans = summa;
