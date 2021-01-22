@@ -17,5 +17,11 @@ public class Menyy {
             this.soogid.add(sook);
         }
     }
+
+    public void valjastaMenyy() {
+        for (int i = 0; soogid.size() > i; i++) {
+            System.out.println(soogid.get(i));
+        }
+    }
 }
 
