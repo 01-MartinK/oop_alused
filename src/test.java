@@ -32,10 +32,13 @@ class test {
 
     }
 
+    // Run meetod mis jookseb siis kui tahan
     public static void run() {
+        // Küsib tegevust mida tahetakse teha
         System.out.println("Mida soovite teha Lisada menüüse midagi(l) puhastada menüü(p): ");
         String tegevus = sisend.nextLine();
 
+        // kontrollib mis tegevus see on
         if (tegevus.equals("l")) {
             System.out.println("Sisestage söögi nime: ");
             String sook = sisend.nextLine();
@@ -44,14 +47,17 @@ class test {
             menuu.puhastaMenyy();
         }
 
+        // Näitab praegust menüüd
         System.out.println("Siukene näeb menuu välja");
         System.out.println("");
         menuu.valjastaMenyy();
 
+        // Küsib kas tahate veel midagi teha
         System.out.println("");
-        System.out.println("Kas soovide edasi redigeerida (jah) või (ei)?");
+        System.out.println("Kas soovide edasi redigeerida menüüd (jah) või (ei)?");
         tegevus = sisend.nextLine();
 
+        // Kontrollib kas nõustusite
         if (tegevus.equals("jah")) {
             run();
         } else if (tegevus.equals("ei")) {
