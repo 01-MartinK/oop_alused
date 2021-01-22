@@ -27,10 +27,17 @@ class test {
 
         loendur.valjastaVaartus();
 
-        loendur.reset();
+        loendur.kahane();
+        ;
         loendur.valjastaVaartus();
 
         loendur.kahane();
+        loendur.valjastaVaartus();
+
+        loendur.kahane();
+        loendur.valjastaVaartus();
+
+        loendur.algvaartusta();
         loendur.valjastaVaartus();
     }
 }
