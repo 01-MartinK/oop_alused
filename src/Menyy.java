@@ -23,5 +23,9 @@ public class Menyy {
             System.out.println(soogid.get(i));
         }
     }
+
+    public void puhastaMenyy() {
+        soogid.clear();
+    }
 }
 
