@@ -23,7 +23,14 @@ import java.util.Scanner;
 
 class test {
     public static void main(String[] args) {
-        toode banaan = new toode("Banaan", 5.2, 5);
-        banaan.valjastaToode();
+        KahanevLoendur loendur = new KahanevLoendur(10);
+
+        loendur.valjastaVaartus();
+
+        loendur.kahane();
+        loendur.valjastaVaartus();
+
+        loendur.kahane();
+        loendur.valjastaVaartus();
     }
 }
