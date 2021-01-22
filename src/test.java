@@ -22,22 +22,39 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 class test {
+
+    public static Menyy menuu = new Menyy();
+    public static Scanner sisend = new Scanner(System.in);
+
     public static void main(String[] args) {
-        KahanevLoendur loendur = new KahanevLoendur(100);
+        run();
 
-        loendur.valjastaVaartus();
 
-        loendur.kahane();
-        ;
-        loendur.valjastaVaartus();
+    }
 
-        loendur.kahane();
-        loendur.valjastaVaartus();
+    public static void run() {
+        System.out.println("Mida soovite teha Lisada menüüse midagi(l) puhastada menüü(p): ");
+        String tegevus = sisend.nextLine();
 
-        loendur.kahane();
-        loendur.valjastaVaartus();
+        if (tegevus.equals("l")) {
+            System.out.println("Sisestage söögi nime: ");
+            String sook = sisend.nextLine();
+            menuu.lisaSook(sook);
+        } else if (tegevus.equals("p")) {
+            menuu.puhastaMenyy();
+        }
 
-        loendur.algvaartusta();
-        loendur.valjastaVaartus();
+        System.out.println("Siukene näeb menuu välja");
+        System.out.println("");
+        menuu.valjastaMenyy();
+
+        System.out.println("");
+        System.out.println("Kas soovide edasi redigeerida (jah) või (ei)?");
+        tegevus = sisend.nextLine();
+
+        if (tegevus.equals("jah")) {
+            run();
+        } else if (tegevus.equals("ei")) {
+        }
     }
 }
