@@ -13,6 +13,7 @@ Küsi kasutaja nimi ja trüki tema hüüdnimi
 
  */
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
@@ -27,7 +28,18 @@ class test {
     public static Scanner sisend = new Scanner(System.in);
 
     public static void main(String[] args) {
-        run();
+        JFrame f = new JFrame("Button Example");
+        JButton b = new JButton("Click here");
+        JButton c = new JButton("Test");
+        b.setBounds(50, 100, 95, 30);
+        c.setBounds(150, 100, 95, 30);
+        f.add(b);
+        f.add(c);
+        f.setSize(400, 400);
+        f.setLayout(null);
+        f.setVisible(true);
+
+        //run();
 
 
     }
