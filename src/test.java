@@ -28,11 +28,17 @@ class test {
     public static Scanner sisend = new Scanner(System.in);
 
     public static void main(String[] args) {
-        rystkulik ristkülik = new rystkulik();
+        inimene matti = new inimene("Matti");
+        inimene john = new inimene("John");
 
-        ristkülik.setKorgus(21.0);
-        ristkülik.setLaius(7.2);
+        matti.setPikkus(180);
+        matti.setMass(86);
 
-        System.out.println(ristkülik.toString());
+        john.setPikkus(175);
+        john.setMass(64);
+
+        System.out.println(matti.getNimi() + ", kehamassiindeks: " + matti.kmi());
+        System.out.println(john.getNimi() + ", kehamassiindeks: " + john.kmi());
+
     }
 }
