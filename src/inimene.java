@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class inimene {
     Integer pikkus;
     Integer mass;
@@ -33,8 +35,10 @@ public class inimene {
         this.mass = mass;
     }
 
-    public double kmi() {
-        return ((double) this.mass / (this.pikkus * this.pikkus)) * 10000;
+    public Double kmi() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        Double b = ((double) this.mass / (this.pikkus * this.pikkus) * 10000);
+        return Double.parseDouble(df.format(b));
     }
 
 }
