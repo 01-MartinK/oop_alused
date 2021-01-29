@@ -29,16 +29,13 @@ class test {
 
     public static void main(String[] args) {
         inimene matti = new inimene("Matti");
-        inimene john = new inimene("John");
 
         matti.setPikkus(180);
-        matti.setMass(86);
-
-        john.setPikkus(175);
-        john.setMass(64);
+        matti.setMass(120);
 
         System.out.println(matti.getNimi() + ", kehamassiindeks: " + matti.kmi());
-        System.out.println(john.getNimi() + ", kehamassiindeks: " + john.kmi());
+        matti.tasakaalukus();
+        System.out.println("Pärast natuke aega " + matti.getNimi() + ", kehamassiindeks on " + matti.kmi());
 
     }
 }
