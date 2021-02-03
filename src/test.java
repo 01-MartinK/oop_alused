@@ -74,5 +74,7 @@ class test {
 
         System.out.println("Esimese armee ülema " + esimeseArmeeUlem + " tase on " + esimeseArmeeUlem.getTase());
         System.out.println("Teise armee ülema " + teiseArmeeUlem + " tase on " + teiseArmeeUlem.getTase());
+
+        String input = sisend.nextLine();
     }
 }
