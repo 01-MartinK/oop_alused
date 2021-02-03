@@ -40,11 +40,11 @@ class test {
         //inimene sat = new inimene();
 
 
-        ArrayList<sodur> armee1 = new ArrayList<sodur>();
-        ArrayList<sodur> armee2 = new ArrayList<sodur>();
+        ArrayList<sodur> armee1 = new ArrayList<>();
+        ArrayList<sodur> armee2 = new ArrayList<>();
 
 
-        for (int i = 0; i <= 20; i++) {
+        for (int i = 2; i < 20; i++) {
             int randomValue = 1 + random.nextInt(2);
             //System.out.println(randomValue);
             if (randomValue == 1) {
@@ -53,6 +53,8 @@ class test {
                 armee2.add(new sodur());
             }
         }
+        armee1.add(new ulem());
+        armee2.add(new ulem());
 
         System.out.println("1 Armee");
         for (int i = 0; i < armee1.size(); i++) {
@@ -64,5 +66,13 @@ class test {
             System.out.println(armee2.get(i) + " id-ga " + armee2.get(i).getId());
         }
 
+        ulem esimeseArmeeUlem = new ulem();
+        ulem teiseArmeeUlem = new ulem();
+
+        esimeseArmeeUlem.setTase(armee1.size());
+        teiseArmeeUlem.setTase(armee2.size());
+
+        System.out.println("Esimese armee ülema " + esimeseArmeeUlem + " tase on " + esimeseArmeeUlem.getTase());
+        System.out.println("Teise armee ülema " + teiseArmeeUlem + " tase on " + teiseArmeeUlem.getTase());
     }
 }
