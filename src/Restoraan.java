@@ -3,10 +3,6 @@ public class Restoraan {
     private String soogiTyyp;
     private Integer teenitudKylalised;
 
-    public Restoraan(String nimi) {
-        this.nimi = nimi;
-    }
-
     public Restoraan(String nimi, String soogityyp) {
         this.nimi = nimi;
         this.soogiTyyp = soogityyp;

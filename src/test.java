@@ -30,28 +30,12 @@ class test {
     public static Random random = new Random();
 
     public static void main(String[] args) {
-        Restoraan restorant = new Restoraan("Mega punch", "šokolaad");
-        Restoraan bigMac = new Restoraan("macdonalts", "puhas rasv");
-        Restoraan jäätis = new Restoraan("Külm Lõbu", "jäätised");
+        jaatisekiosk mugul = new jaatisekiosk("Mugul");
 
-        System.out.println(restorant);
-        System.out.println(jäätis);
-        System.out.println(bigMac);
+        mugul.lisaJaatis("Vanilla");
+        mugul.lisaJaatis("Šokolaad");
+        mugul.lisaJaatis("Mint");
 
-        for (int i = 0; i < 20; i++) {
-            int rand = (int) random.nextInt(3);
-            if (rand == 0) {
-                restorant.teenindatudKylalisedPaevas(i);
-            } else if (rand == 1) {
-                bigMac.teenindatudKylalisedPaevas(i);
-            } else if (rand == 2) {
-                jäätis.teenindatudKylalisedPaevas(i);
-            }
-        }
-
-
-        System.out.println(restorant.getNimi() + " on " + restorant.getTeenitudKylalised() + " külalist teeninud päevas.");
-        System.out.println(bigMac.getNimi() + " on " + bigMac.getTeenitudKylalised() + " külalist teeninud päevas.");
-        System.out.println(jäätis.getNimi() + " on " + jäätis.getTeenitudKylalised() + " külalist teeninud päevas.");
+        System.out.println(mugul);
     }
 }
