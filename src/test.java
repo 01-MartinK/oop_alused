@@ -27,6 +27,7 @@ import java.util.Scanner;
 class test {
 
     public static Scanner sisend = new Scanner(System.in);
+    public static Random random = new Random();
 
     public static void main(String[] args) {
         Restoraan restorant = new Restoraan("Mega punch", "šokolaad");
@@ -37,8 +38,20 @@ class test {
         System.out.println(jäätis);
         System.out.println(bigMac);
 
-        restorant.avaRestoraan();
-        bigMac.avaRestoraan();
-        jäätis.avaRestoraan();
+        for (int i = 0; i < 20; i++) {
+            int rand = (int) random.nextInt(3);
+            if (rand == 0) {
+                restorant.teenindatudKylalisedPaevas(i);
+            } else if (rand == 1) {
+                bigMac.teenindatudKylalisedPaevas(i);
+            } else if (rand == 2) {
+                jäätis.teenindatudKylalisedPaevas(i);
+            }
+        }
+
+
+        System.out.println(restorant.getNimi() + " on " + restorant.getTeenitudKylalised() + " külalist teeninud päevas.");
+        System.out.println(bigMac.getNimi() + " on " + bigMac.getTeenitudKylalised() + " külalist teeninud päevas.");
+        System.out.println(jäätis.getNimi() + " on " + jäätis.getTeenitudKylalised() + " külalist teeninud päevas.");
     }
 }

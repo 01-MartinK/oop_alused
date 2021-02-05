@@ -1,6 +1,7 @@
 public class Restoraan {
     private String nimi;
     private String soogiTyyp;
+    private Integer teenitudKylalised;
 
     public Restoraan(String nimi) {
         this.nimi = nimi;
@@ -9,6 +10,19 @@ public class Restoraan {
     public Restoraan(String nimi, String soogityyp) {
         this.nimi = nimi;
         this.soogiTyyp = soogityyp;
+        this.teenitudKylalised = 0;
+    }
+
+    public String getNimi() {
+        return nimi;
+    }
+
+    public void teenindatudKylalisedPaevas(int kylalised) {
+        this.teenitudKylalised += kylalised;
+    }
+
+    public Integer getTeenitudKylalised() {
+        return teenitudKylalised;
     }
 
     public void avaRestoraan() {
