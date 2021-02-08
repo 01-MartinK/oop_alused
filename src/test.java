@@ -40,5 +40,6 @@ class test {
         tb.lisaAken(1, 2);
 
         System.out.println(tb.tööPind());
+        tb.tapeediPanek();
     }
 }
