@@ -73,9 +73,9 @@ class test {
         korgus.setBounds(250, 150, 150, 25);
 
         //????
-        Canvas test = new Canvas();
+        Canvas test = new Drawing();
 
-        test.setBounds(300, 300, 300, 300);
+        test.setBounds(0, 200, 1000, 1000);
 
         //nupu käsud
         arvutaPindala.addActionListener(new ActionListener() {
