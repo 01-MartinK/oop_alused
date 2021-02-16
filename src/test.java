@@ -1,110 +1,61 @@
-/*
-
-Loo Hashmap tüüpi objekt main meetodis
-võti ja väärtus String
-salvesta mapi inimeste nimed - võtmena ja hüüdnimed - väärtusena
-kasuta andmete hoidmiseks ainult väikesed tähed
-
-matti - mage
-mikael - mixu
-arto - arppa
-
-Küsi kasutaja nimi ja trüki tema hüüdnimi
-
- */
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.function.DoubleUnaryOperator;
 
-class test {
-
-    public static Scanner sisend = new Scanner(System.in);
-    public static Random random = new Random();
-
+public class test {
     public static void main(String[] args) {
-        tuba tb = new tuba(6, 3, 2.7);
-        System.out.println(tb.getPindala());
+        // moodustame õpetatavate teemade nimekirja
+        ArrayList<String> teemad = new ArrayList<>();
+        teemad.add("OOP");
+        teemad.add("Pärilus");
+        teemad.add("Kapseldus");
+        teemad.add("Kompositsioon");
+        // loome õpetaja
+        Opetaja opetaja = new Opetaja("Anna");
 
-        tb.lisaMoobel("lamp", "lamp", "vanakreeka");
-        tb.lisaMoobel("tugitool", "lauatool", "tulevikune");
-        tb.lisaAken(1, 1);
-        tb.lisaAken(1, 1);
-        tb.lisaAken(1, 2);
+        // Loome klass
+        ArrayList<Opilane> ita21 = new ArrayList<>();
+        Opilane mati = new Opilane("Mati");
+        Opilane kati = new Opilane("Kati");
+        ita21.add(mati);
+        ita21.add(kati);
 
-        System.out.println(tb.tööPind());
-        System.out.println(tb.tapeediPanek());
-        tb.getMooblid();
+        // Õpetaja õpetab oma õpilased
+        oppetoo(teemad, ita21, opetaja);
 
+        // teadmiste kontroll pärast aine lõpetamiset
+        teadmisteKontroll(ita21);
+        // ühe nädala pärast Mati unustab teemat Kapseldust
+        mati.unusta("Kapseldus");
+        // kontrollime uuesti teadmised
+        teadmisteKontroll(ita21);
+        // las Mati uuesti õpib kalselduse teemad
+        mati.opib("Kapseldus");
+        // kontrollime uuesti teadmised
+        teadmisteKontroll(ita21);
 
-        //raam
-        JFrame frame = new JFrame();
+        //Nädalavahetus on ja nad teevad omi asju
+        kati.juhuslikPaev();
+        mati.juhuslikPaev();
+        kati.juhuslikPaev();
+        mati.juhuslikPaev();
+        // kontrollime uuesti teadmisi pärast nädalavahetust
+        teadmisteKontroll(ita21);
+    }
 
-        //nupud
-        JButton naita = new JButton("näita");
-        JButton arvutaPindala = new JButton("arvuta Pindala");
-        JButton tapeedideHulk = new JButton("Arvuta tapeedide hulga");
-
-        naita.setBounds(50, 100, 150, 25);
-        arvutaPindala.setBounds(50, 125, 150, 25);
-        tapeedideHulk.setBounds(50, 150, 150, 25);
-
-        //Tekstiväljad
-        JLabel text = new JLabel("väljund");
-        JLabel warning = new JLabel("!Hoiatus väga katkine!");
-        JTextField pikkus = new JTextField("pikkus");
-        JTextField laius = new JTextField("laius");
-        JTextField korgus = new JTextField("kõrgus");
-
-        text.setBounds(50, 200, 600, 50);
-        warning.setBounds(50, 25, 300, 50);
-        pikkus.setBounds(250, 100, 150, 25);
-        laius.setBounds(250, 125, 150, 25);
-        korgus.setBounds(250, 150, 150, 25);
-
-        //????
-        Canvas test = new Drawing();
-
-        test.setBounds(0, 200, 1000, 1000);
-
-        //nupu käsud
-        arvutaPindala.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (pikkus.getText() != "pikkus" && pikkus.getText() != "" && laius.getText() != "laius" && laius.getText() != "" && korgus.getText() != "" && korgus.getText() != "kõrgus") {
-                    text.setText("väljund on: " + String.valueOf(tb.arvutaPindala(Double.parseDouble(pikkus.getText()), Double.parseDouble(laius.getText()), Double.parseDouble(korgus.getText()), false)) + " m.");
-                    tb.setSeintePindala(tb.arvutaPindala(Double.parseDouble(pikkus.getText()), Double.parseDouble(laius.getText()), Double.parseDouble(korgus.getText()), false));
-                }
+    public static void teadmisteKontroll(ArrayList<Opilane> grupp) {
+        for (Opilane opilane : grupp) {
+            System.out.println("Opilane " + opilane.getNimi() + " teadmised:");
+            for (String teadmine : opilane.getTeadmised()) {
+                System.out.println(teadmine);
             }
-        });
+            System.out.println();
+        }
+    }
 
-        tapeedideHulk.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                text.setText("väljund on: " + tb.tapeediPanek());
+    public static void oppetoo(ArrayList<String> teemad, ArrayList<Opilane> grupp, Opetaja opetaja) {
+        for (String teema : teemad) {
+            for (Opilane opilane : grupp) {
+                opetaja.opetab(opilane, teema);
             }
-        });
-
-        // raami asjade lisamine
-        frame.add(naita);
-        frame.add(arvutaPindala);
-        frame.add(tapeedideHulk);
-        frame.add(pikkus);
-        frame.add(laius);
-        frame.add(korgus);
-        frame.add(text);
-        frame.add(warning);
-        frame.add(test);
-        frame.setSize(600, 600);
-        frame.setLayout(null);
-        frame.setVisible(true);
+        }
     }
 }
